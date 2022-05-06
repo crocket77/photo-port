@@ -2,19 +2,19 @@ import React from 'react';
 
 const categories = [
   {
-    names: "commercial",
+    name: "commercial",
     description:
       "Photos of grocery stores, food trucks, and other commercial projects",
   },
-  { names: "portraits", description: "Portraits of people in my life" },
-  { names: "food", description: "Delicious delicacies" },
+  { name: "portraits", description: "Portraits of people in my life" },
+  { name: "food", description: "Delicious delicacies" },
   {
-    names: "landscape",
+    name: "landscape",
     description: "Fields, farmhouses, waterfalls, and the beauty of nature",
   },
 ];
 
-function categorySelected() {
+function categorySelected(name) {
   // eslint-disable-next-line no-restricted-globals
   console.log( `${name} clicked`)
 }
@@ -23,14 +23,14 @@ function Nav() {
   return (
     <header  className="my-5">
         <h2>
-    <a href="/">
+    <a data-testid="link" href="/">
       <span role="img" aria-label="camera"> 📸</span> Oh Snap!
     </a>
   </h2>
   <nav>
     <ul className="flex-row">
       <li className="mx-2">
-        <a href="#about">
+        <a data-testid="about" href="#about">
           About me
         </a>
       </li>
@@ -40,10 +40,10 @@ function Nav() {
       {categories.map((category) => (
         <li
           className="mx-1"
-          key={category.names}
+          key={category.name}
         >
-        <span onClick={() => categorySelected(category.names)} >
-          {category.names}
+        <span onClick={() => categorySelected(category.name)} >
+          {category.name}
         </span>
         </li>
       ))}
