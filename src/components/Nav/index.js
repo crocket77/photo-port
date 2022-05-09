@@ -23,7 +23,7 @@ return (
       {" "}
        📸
       </span>{" "}
-       Oh Snap!
+       Photo Port!
     </a>
   </h2>
   <nav>
